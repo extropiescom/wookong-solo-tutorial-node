@@ -1,0 +1,28 @@
+{
+  "name": "wookong-solo-tutorial-node",
+  "version": "1.0.0",
+  "description": "A tutorial for showing how to use wookong-solo-lib",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/extropiescom/wookong-solo-tutorial-node.git"
+  },
+  "keywords": [
+    "Ethereum",
+    "WOOKONG",
+    "tutorial"
+  ],
+  "author": "pengwei@extropies.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/extropiescom/wookong-solo-tutorial-node/issues"
+  },
+  "homepage": "https://github.com/extropiescom/wookong-solo-tutorial-node#readme",
+  "dependencies": {
+    "web3": "^1.0.0-beta.54",
+    "wookong-solo-lib": "git+https://github.com/extropiescom/wookong-solo-lib.git"
+  }
+}
