@@ -213,7 +213,7 @@ async function processSend(command) {
         const to = command[2];
         const value = web3.utils.toHex(await web3.utils.toWei(command[3]));
         // raw data to sign
-        const dataToSign = [nonce, gasPriceHex, gasLimitHex, to, value, '','0x01', '0x', '0x'];
+        const dataToSign = [nonce === '0x0' ? '' : nonce, gasPriceHex, gasLimitHex, to, value, '','0x01', '0x', '0x'];
         // raw data to sign, rlp encoded
         const rawToSign = encode(dataToSign).toString('hex');
         // call WOOKONG Solo for signature
@@ -229,7 +229,7 @@ async function processSend(command) {
             v = '0x26';
         }
         // signed raw data
-        const dataSigned = [nonce, gasPriceHex, gasLimitHex, to, value, '', v, signResult.result.sign.r, signResult.result.sign.s];
+        const dataSigned = [nonce === '0x0' ? '' : nonce, gasPriceHex, gasLimitHex, to, value, '', v, signResult.result.sign.r, signResult.result.sign.s];
         // signed raw data, rlp encoded
         const rawSigned = `0x${encode(dataSigned).toString('hex')}`;
         // broadcast transaction to blockchain
